@@ -1,3 +1,7 @@
+:root {
+    --black: rgb(15, 15, 15):
+}
+
 * {
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -15,27 +19,34 @@ img {
 }
 
 img[alt="icon-hero"] {
-    border: 1px solid red;
-    width: 50px;
-    top: 50px;
-    right: 20px;
+    /* border: 1px solid red; */
+    height: 120px;
+    top: 5px;
+    transform: translate(10px, 20px);
 }
 
 nav {
     position: fixed;
     width: 100vw;
     height: 70px;
-    background-color: black;
+    background-color: rgb(15, 15, 15, 80%);
+    backdrop-filter: blur(5px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+}
+
+nav .nav-icon {
+    padding: 10px 20px;
 }
 
 nav .nav-link {
     display: flex;
     gap: 30px;
     justify-content: flex-end;
-    padding: 10px;
+    align-items: center;
+    padding: 10px 30px;
 }
 
 nav a {
@@ -43,6 +54,12 @@ nav a {
     color: azure;
     font-size: large;
     font-weight: bold;
+}
+
+nav a.main-a {
+    background-color: dodgerblue;
+    padding: 10px 25px;
+    border-radius: 100px;
 }
 
 nav ul {
@@ -61,3 +78,60 @@ nav li {
 a {
     scroll-behavior: smooth;
 }
+
+footer {
+    background-color: rgb(31, 31, 31);
+    width: 100%;
+    height: 200px;
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+
+header h1 {
+    display: block;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 40vw;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    text-shadow: 0 0 5px black;
+    color: white;
+    text-wrap: nowrap
+}
+
+.container {
+    width: 100%;
+    height: 1000px;
+    background-color: rgb(211, 211, 230);
+    display: grid;
+    grid-template-areas: 
+    'main . .'
+    'aside . .'
+    'aside aside .';
+}
+
+main {
+    grid-area: "main";
+    background-color: aqua;
+    padding: 10px;
+}
+
+hr {
+    border: medium double black;
+    
+}
+
+aside {
+    grid-area:  "aside";
+    background-color: brown;
+}
+
+section {
+    grid-area: "section";
+    background-color: chocolate;
+}
+
+
+
