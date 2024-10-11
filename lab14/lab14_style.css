@@ -1,0 +1,149 @@
+:root {
+    --green-ic: rgb(88, 119, 60);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --logo-img: url("../images/anawin.jpg");
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to top, rgb(82, 201, 82), green);
+    background-repeat: no-repeat;
+}
+
+.profile {
+    margin-top: 2rem;
+    border: medium solid green;
+    box-shadow: 0 0 5px black;
+    background-image: var(--logo-img);
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    width: 8rem;
+    height: 8rem;
+    position: relative;
+}
+
+
+.notify {
+    width: 40px;
+    height: 30px;
+    background-color: tomato;
+    box-shadow: 0 0 5px black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.card {
+    background-color: rgb(28, 54, 32, 0.8);
+    border-radius: 50px;
+    border: medium solid green;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* input here!!!!!!! */
+
+button {
+    background-color: azure;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 0 10px;
+    background-color: dodgerblue;
+    color: white;
+    font-weight: bold;
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* table */
+
+table {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-x: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    counter-reset: rowNumber;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+thead {
+    background-color: #4CAF50;
+    color: white;
+}
+thead th {
+    border-bottom: medium solid rgb(35, 104, 35);
+}
+
+tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+    background-color: #4a774c55;
+}
+
+tr:hover {
+    background-color: #f1f1f155;
+    cursor: pointer;
+}
+
+th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+td {
+    color: #ffffff;
+}
+
+/* Auto-numbering style */
+td:first-child::after {
+    counter-increment: rowNumber; /* Increment counter */
+    content: counter(rowNumber); /* Display counter */
+    text-align: center;
+    font-weight: bold;
+}
+
+/* inputs */
+.for-table {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    align-items: baseline;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+input {
+    border-radius: 7px;
+    border: none;
+    border-bottom: 2px solid green;
+    padding: 5px;
+}

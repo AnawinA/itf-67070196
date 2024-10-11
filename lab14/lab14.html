@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lab14_style.css">
+    <title>Phone Book</title>
+</head>
+<body>
+    <div class="center card">
+        <div class="profile">
+            <div class="notify"><p>555</p></div>
+        </div>
+        <h1 id="username">Username: Anawin</h1>
+        <div>
+            <label for="">Set username</label><input type="text" id="name"><button onclick="setName()">set</button><br>
+            <label for="">Set profile</label><input type="text" id="profile-input" value="https://i.ytimg.com/vi/73qM1rd_rHo/hqdefault.jpg"><button onclick="setProfile()">set</button><br>
+            <label for="">Name </label><input type="text" id="name-insert" required>
+            <label for="">Phone Number </label><input type="text" id="tel-insert" required>
+            <button onclick="addParagraph()">append</button>
+        </div>
+        <table id="main-table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody id="table-insert">
+                <tr>
+                    <td></td>
+                    <td contenteditable="true">Monday</td>
+                    <td contenteditable="true">000-000-0000</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td contenteditable="true">Monday</td>
+                    <td contenteditable="true">000-000-0000</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td contenteditable="true">Monday</td>
+                    <td contenteditable="true">000-000-0000</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td contenteditable="true">Monday</td>
+                    <td contenteditable="true">000-000-0000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="lab14.js"></script>
+</body>
+</html>
