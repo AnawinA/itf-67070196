@@ -9,30 +9,52 @@ const nameInsert = document.getElementById('name-insert')
 const telInsert = document.getElementById('tel-insert')
 
 
-username.textContent = "Hello"
-
 function setName() {
-    username.textContent = input.value + " ok"
+    username.textContent = "Hello World. " + input.value + "!"
 }
 function setProfile() {
     profile.style.backgroundImage = 'url(' + profileInput.value + ')'
 }
 
+setName()
+
+function resetIndex() {
+    for (let i = 0; i < tableInsert.children.length; i++) {
+        tableInsert.children[i].firstChild.textContent = i + 1
+    }
+}
+
+function selfRemoveRow(tr) {
+    tr.firstChild.addEventListener('dblclick', (e) => {
+        e.target.parentNode.remove()
+        resetIndex()
+    })
+}
+
 function addParagraph() {
     if (nameInsert.value && telInsert.value) {
         const newpara = document.createElement('tr')
-        newpara.innerHTML = `<td mouseup=removeRow(e)></td><td>${nameInsert.value}</td><td>${telInsert.value}</td>`
+        newpara.innerHTML = `<td>${tableInsert.children.length + 1}</td>
+        <td contenteditable="true">${nameInsert.value}</td>
+        <td contenteditable="true">${telInsert.value}</td>`
+        selfRemoveRow(newpara)
         nameInsert.value = ""
         telInsert.value = ""
         tableInsert.appendChild(newpara)
     }
 }
 
-// function mouseup
-// element.addEventListener('mouseup', function(event) {
-//     if (event.button === 1) {
-//         event.preventDefault()
-//         row.remove()
-//         console.log('hfidshif')
-//     }
-// })
+function saveCSV() {
+    let csvContent = ""
+    for (i of tableInsert.children) {
+        csvContent += Number(i.firstChild.textContent) + "," + i.children[1].textContent + "," + i.children[2].textContent + "\n"
+    }
+    if (csvContent === "") return
+    console.log(csvContent)
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;'})
+    const link = document.createElement('a')
+    const url = URL.createObjectURL(blob)
+    link.setAttribute('href', url); link.setAttribute('download', 'data.csv')
+    link.style.visibility = 'hidden'
+    document.body.appendChild(link); link.click(); document.body.removeChild(link)
+}

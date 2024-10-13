@@ -12,21 +12,25 @@
         <div class="profile">
             <div class="notify"><p>555</p></div>
         </div>
-        <h1 id="username">Username: Anawin</h1>
+        <h1 id="username"></h1>
         <div class="inputs">
-            <label for="">Set username</label><input type="text" id="name"><button onclick="setName()">set</button><br>
-            <label for="">Set profile</label><input type="text" id="profile-input" value="https://i.ytimg.com/vi/73qM1rd_rHo/hqdefault.jpg"><button onclick="setProfile()">set</button><br>
+            <fieldset>
+                <legend> Settings </legend>
+                <label for="name">Set username</label><input type="text" id="name" value="Anawin"><button onclick="setName()">set</button><br>
+                <label for="profile-input">Set profile</label><input type="text" id="profile-input" value="https://i.ytimg.com/vi/73qM1rd_rHo/hqdefault.jpg"><button onclick="setProfile()">set</button><br>
+            </fieldset>
             <h2>Phone Number List</h2>
             <div class="for-table">
                 <input type="text" id="name-insert" placeholder="Name">
                 <input type="text" id="tel-insert" placeholder="Tel">
                 <div>
                     <button onclick="addParagraph()">append</button>
-                    <button onclick="exportTable()">export</button>
+                    <button onclick="saveCSV()">export</button>
                 </div>
             </div>
         </div>
         <table id="main-table">
+            <caption class="tips">*double click NO. to delete, click NAME or PHONE NUMBER to edit*</caption>
             <thead>
                 <tr>
                     <th>No.</th>
@@ -35,26 +39,6 @@
                 </tr>
             </thead>
             <tbody id="table-insert">
-                <tr>
-                    <td></td>
-                    <td contenteditable="true">Monday</td>
-                    <td contenteditable="true">000-000-0000</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td contenteditable="true">Monday</td>
-                    <td contenteditable="true">000-000-0000</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td contenteditable="true">Monday</td>
-                    <td contenteditable="true">000-000-0000</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td contenteditable="true">Monday</td>
-                    <td contenteditable="true">000-000-0000</td>
-                </tr>
             </tbody>
         </table>
         </div>
